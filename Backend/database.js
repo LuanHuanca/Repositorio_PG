@@ -5,6 +5,7 @@ const connection = mysql.createConnection({
     password: '',
     database: 'proyectos_de_grado', //Nombre de la base de datos Sakila
 });
+
 // coneccion a la base de datos
 connection.connect((error) => {
     if(error){
