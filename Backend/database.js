@@ -3,7 +3,7 @@ const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'proyectos_de_grado', //Nombre de la base de datos
+    database: 'proyectos_de_grado',
 });
 
 // coneccion a la base de datos
