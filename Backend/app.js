@@ -10,7 +10,7 @@ const estadisticasRoutes = require("./estadisticasRoutes");
 // const gestionRoutes = require("./gestionRoutes");
 // const observacionrRoutes = require("./observacionrRoutes");
 // const observaciontRoutes = require("./observaciontRoutes");
-// const personaRoutes = require("./personaRoutes");
+const personaRoutes = require("./personaRoutes");
 // const presentacionRoutes = require("./presentacionRoutes");
 // const proyectoRoutes = require("./proyectosRoutes");
 // const relatorRoutes = require("./relatorRoutes");
@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 
 //Obtener Rutas del actor
 app.use("/api",estadisticasRoutes);
-// app.use("/api",estudianteRoutes);
+app.use("/api",personaRoutes);
 
 const puerto = 3000;
 app.listen(puerto, () => {

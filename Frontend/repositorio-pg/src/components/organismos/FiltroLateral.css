@@ -1,0 +1,7 @@
+.lateral-container {
+    width: 430px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

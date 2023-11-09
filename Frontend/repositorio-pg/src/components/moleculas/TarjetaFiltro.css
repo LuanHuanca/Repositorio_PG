@@ -1,0 +1,35 @@
+.tarjeta-container{
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 15px;
+    width: 80%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-container h2{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: #035397;
+    margin-top: 0;
+    border-radius: 15px 15px 0px 0px;
+    color: #FFFF;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0px 0px 5px #fff; /* Borde azul y relleno blanco */
+
+}
+
+.tarjeta-container button{
+    margin-left: 15px;
+    width: 40%;
+    margin: 5px;
+    background: transparent ;
+    border: 0;
+    font-weight: 600;
+    display: flex;
+
+
+}

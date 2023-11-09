@@ -1,0 +1,14 @@
+.tituloImagen-container{
+    width: 100%;
+    height: 469px;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    text-align: center;
+}
+
+.tituloImagen-container img{
+    width: 100%;
+    height: 100%;
+}

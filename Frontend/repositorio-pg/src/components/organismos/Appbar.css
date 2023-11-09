@@ -1,0 +1,22 @@
+.appbar{
+    background-color: #FCD900;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.appbar-container{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+img{
+    height: 102px;
+    width: 232px;
+}
