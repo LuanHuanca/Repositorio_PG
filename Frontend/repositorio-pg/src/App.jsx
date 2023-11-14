@@ -1,11 +1,10 @@
-import './App.css'
-import Home from './screens/Home'
+// import './App.css'
+import TarjetaTesisScreen from './screens/TarjetaTesisScreen'
 
 function App() {
 
   return (
     <>
-    <Home/>
     </>
   )
 }

@@ -9,7 +9,7 @@ const EntradaBusqueda = () => {
     <div className="container">
       <TipoBusqueda/>
       <BusquedaInput/>
-      <SearchButton/>
+      <SearchButton buscar={"/busqueda"}/>
     </div>
   );
 };

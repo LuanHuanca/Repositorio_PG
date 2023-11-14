@@ -10,13 +10,16 @@
 
 .appbar-container{
     display: flex;
-    height: 80px;
+    height: auto;
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
 }
 
 img{
-    height: 102px;
-    width: 232px;
+    height: auto;
+    width: 200px;
+    padding-left: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }

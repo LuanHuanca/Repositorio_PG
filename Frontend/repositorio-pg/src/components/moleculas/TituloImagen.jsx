@@ -5,7 +5,7 @@ import Titulo from '../atomos/Titulo'
 const TituloImagen = () => {
   return (
     <div className='tituloImagen-container'>
-      <img src="/images/ColiseoImage.png" alt="Titulo" />
+      <img src="src/assets/ColiseoImage.png" alt="Titulo" />
       <Titulo/>
     </div>
   )

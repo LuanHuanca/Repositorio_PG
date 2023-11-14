@@ -1,0 +1,39 @@
+.tarjetas-de-tesis{
+    margin: 20px 30px;
+    background-color: #035397;
+    height: fit-content;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+}
+
+.tarjetas-de-tesis img{
+    margin: 10px;
+    width: auto;
+    height: auto;
+}
+
+.tarjeta-informacion{
+    width: 100%;
+    padding: 0px 40px 0px 50px;
+    color: white;
+    font-size: 20px;
+}
+
+.boton-container{
+    width: 90%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.boton-container button {
+    display: flex;
+    padding: 15px;
+    background-color: #2e99f7; /* Color de fondo del botón */
+    color: #000; 
+    border: 1px solid black;
+    border-radius: 30px;
+    font-size: 20px;
+}

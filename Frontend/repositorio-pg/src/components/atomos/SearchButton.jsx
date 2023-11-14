@@ -1,12 +1,15 @@
 import React from 'react'
 import { Icon } from "@iconify/react";
 import "./SearchButton.css"
+import { NavLink } from 'react-router-dom';
 
-const SearchButton = () => {
+const SearchButton = ({buscar}) => {
   return (
     <div>
       <button className="container-button">
-        <Icon icon="charm:search" color="white" width="40" />
+        <NavLink to={buscar}>
+          <Icon icon="charm:search" color="white" width="40" />
+        </NavLink>
       </button>
     </div>
   )
