@@ -1,0 +1,44 @@
+[
+    {
+        "id":1,
+        "titulo":"proyectos de grado",
+        "autor": "Samiel de las velas",
+        "fecha": "10-10-2023",
+        "carrera": "Ingenieria de sistemas"
+    },
+    {
+        "id":2,
+        "titulo":"Tesis",
+        "autor": "Adrian Acarapi",
+        "fecha": "10-10-2023",
+        "carrera": "Ingenieria de sistemas"
+    },
+    {
+        "id":3,
+        "titulo":"Tesis",
+        "autor": "Luan Huanca",
+        "fecha": "10-10-2023",
+        "carrera": "Ingenieria de sistemas"
+    },
+    {
+        "id":1,
+        "titulo":"proyectos de grado",
+        "autor": "Samiel de las velas",
+        "fecha": "10-10-2023",
+        "carrera": "Ingenieria de sistemas"
+    },
+    {
+        "id":2,
+        "titulo":"Tesis",
+        "autor": "Adrian Acarapi",
+        "fecha": "10-10-2023",
+        "carrera": "Ingenieria de sistemas"
+    },
+    {
+        "id":3,
+        "titulo":"Tesis",
+        "autor": "Luan Huanca",
+        "fecha": "10-10-2023",
+        "carrera": "Ingenieria de sistemas"
+    }
+]

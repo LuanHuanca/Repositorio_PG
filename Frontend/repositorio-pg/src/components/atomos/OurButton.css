@@ -1,0 +1,11 @@
+.button-container button {
+    width: auto;
+    height: auto;
+    background-color: #F6ED19;
+    font-size: large;
+    font-weight: bolder;
+    padding: 8px 23px;
+    border-radius: 20px;
+    border: 1.5px solid black;
+    outline: none;
+}

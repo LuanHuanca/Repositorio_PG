@@ -1,0 +1,22 @@
+.container-select{
+    background-color: transparent;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.type{
+    background-color: #0039A6;
+    border-radius: 20px;
+    padding: 0px 15px 0px 10px;
+    height: 100%;
+    color: white;
+    border: transparent;
+}
+.type > option{
+    background-color: #0039A6;
+    border-radius: 20px;
+    height: 30px;
+    color: white;
+}

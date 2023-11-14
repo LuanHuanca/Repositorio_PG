@@ -1,0 +1,19 @@
+.titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%; 
+    left: 0;
+    right: 0;
+    transform: translateY(-50%); 
+  }
+  
+.titulo h1 {
+    color: #FFFF; 
+    font-size: 80px; 
+    margin: 0; 
+    font-family: Lexend Giga;
+    text-shadow: -2px -2px 0 #00f, 2px -2px 0 #00f, -2px 2px 0 #00f, 2px 2px 0 #00f, 0px 0px 5px #fff; /* Borde azul y relleno blanco */
+
+}

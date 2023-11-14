@@ -1,0 +1,25 @@
+.appbar{
+    background-color: #FCD900;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.appbar-container{
+    display: flex;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+img{
+    height: auto;
+    width: 200px;
+    padding-left: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
