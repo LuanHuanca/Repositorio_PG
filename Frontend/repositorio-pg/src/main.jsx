@@ -1,10 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+// src/main.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Proyectos from './proyectos';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+const App = () => {
+  return (
+    <div>
+      <h1>Mis Proyectos</h1>
+      <Proyectos/>
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
