@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import "./BusquedaScreen.css";
 import AppbarSinInput from "../components/organismos/AppbarSinInput";
 import TituloImagen from "../components/moleculas/TituloImagen";
@@ -7,22 +7,35 @@ import EntradaBusqueda from "../components/moleculas/EntradaBusqueda";
 import TarjetasTesis from "../components/moleculas/TarjetasTesis";
 import tarjeta from "../json/tarjetas.json"
 import Footer from "../components/organismos/Footer";
-import { Axios } from "axios";
+import axios, { Axios } from "axios";
+import { useProyecto } from "../hooks/useProyecto";
+import { Loading } from "../components/Loading";
 
 const BusquedaScreen = () => {
 
+  //en aqui ya colocamos las variables donde guardaremos los que nos regrese la funcion useProyecto
+  const { isLoading, proyectos} = useProyecto();
+  //Las constantes para manejar la paginacion la cual definimos en 0
+  const [currentpage,setCurrentPage] = useState(0);
+  //Las constantes para realizar la busqueda que por defecto este vacio
+  const [search, setSearch] = useState('');
 
-  //Intento para hacer el consumo de la api, pero aun no esta probado
-  const [tarjetas,setTarjetas] = useState([]);
-  const get_tarjetas = ()=>{
-    Axios.get("url").then((response)=>{
-      setTarjetas(response.data);
-    });
+
+  //hacemos el filtrado de proyectos para que muestre unos cuantos nomas, y manejamos la paginacion al mismo tiempo
+  const filteredProyectos = ()=>{
+    return proyectos.slice(currentpage,currentpage+3);
+  }
+  //para ir a la siguiente pagina 
+  const nextPage = ()=>{
+    setCurrentPage(currentpage + 3);
+  }
+  //para regresar a la pagina anterior 
+  const prevPage = ()=>{
+    //regresa solo cuando la pagina sea mayor a 0
+    if(currentpage > 0)
+      setCurrentPage(currentpage - 3);
   }
 
-  useEffect(()=>{
-    get_tarjetas();
-  })
 
   return (
     <div>
@@ -32,17 +45,19 @@ const BusquedaScreen = () => {
         <FiltroLateral />
         <div className="forTargets">
           <div className="fondo-busqueda">
-            <EntradaBusqueda />
+            <EntradaBusqueda valores={search} accion1={ (event) => setSearch(event.target.value)}/>
             <h3>Resultados de busqueda</h3>
+            <button onClick={prevPage}>Anterior</button>
+            <button onClick={nextPage}>Siguiente</button>
           </div>
+          {
+            isLoading && <Loading/>
+          }
           <div className="Tarjetas">
             {
-              //EL SIGUIENTE CODIGO ES PARA EL CONSUMO DE LA API
-              // tarjetas.map((tarjetas)=>{
-              //   return <TarjetasTesis titulo={tarjetas.titulo} autor={tarjetas.autor} carrera={tarjetas.carrera} fecha={tarjetas.fecha}/>
-              // })
-              tarjeta.map((tarjeta)=>{
-                return <TarjetasTesis titulo={tarjeta.titulo} autor={tarjeta.autor} carrera={tarjeta.carrera} fecha={tarjeta.fecha}/>
+              //pedimos a nuestra funcion filteredProyectos para su paginacion y filtracion
+              filteredProyectos()?.map((item)=>{
+                return <TarjetasTesis key={item.id} titulo={item.name} autor={item.username} carrera={item.carrera} fecha={item.fecha}/>
               })
             }
           </div>  

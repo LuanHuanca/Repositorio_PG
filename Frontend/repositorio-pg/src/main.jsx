@@ -8,7 +8,7 @@ import HomeScreen from './screens/HomeScreen.jsx'
 import BusquedaScreen from './screens/BusquedaScreen.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+
     <BrowserRouter>
       <Routes>
         <Route path='/tarjetaTesis' element={<TarjetaTesisScreen/>}/>
@@ -16,5 +16,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/busqueda' element={<BusquedaScreen/>}/>
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>,
 )
