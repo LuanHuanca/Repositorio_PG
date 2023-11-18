@@ -1,15 +1,20 @@
 import React from "react";
 import "./EntradaBusqueda.css";
 import TipoBusqueda from "../atomos/TipoBusqueda";
-import BusquedaInput from "../atomos/BusquedaInput";
 import SearchButton from "../atomos/SearchButton";
 
-const EntradaBusqueda = () => {
+const EntradaBusqueda = ({valores,accion1,accion2}) => {
   return (
     <div className="container">
       <TipoBusqueda/>
-      <BusquedaInput/>
-      <SearchButton buscar={"/busqueda"}/>
+      <input
+        value={valores}
+        className="input-container"
+        type="text"
+        placeholder="Ingrese su busqueda"
+        onChange={accion1}
+      />
+      <SearchButton direccion={"/busqueda"} action={accion2}/>
     </div>
   );
 };
