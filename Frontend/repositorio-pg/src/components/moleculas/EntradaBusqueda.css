@@ -1,0 +1,23 @@
+.container{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    border-radius: 20px 20px 0px 20px;
+    width: 95%;
+    height: 50px;
+    margin: 20px;
+    border: 1px solid black;
+}
+.input-container{
+    height: 100%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    outline: 0;
+    padding: 0px 0px 0px 10px;
+}
+
+
+
+

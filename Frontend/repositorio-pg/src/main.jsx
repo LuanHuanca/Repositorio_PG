@@ -1,15 +1,19 @@
-// src/main.js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Proyectos from './proyectos';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
+import App from './App.jsx'
+import './index.css'
+import TarjetaTesisScreen from './screens/TarjetaTesisScreen.jsx'
+import HomeScreen from './screens/HomeScreen.jsx'
+import BusquedaScreen from './screens/BusquedaScreen.jsx'
 
-const App = () => {
-  return (
-    <div>
-      <h1>Mis Proyectos</h1>
-      <Proyectos/>
-    </div>
-  );
-};
+ReactDOM.createRoot(document.getElementById('root')).render(
 
-ReactDOM.render(<App />, document.getElementById('root'));
+    <BrowserRouter>
+      <Routes>
+        <Route path='/tarjetaTesis' element={<TarjetaTesisScreen/>}/>
+        <Route path='/' element={<HomeScreen/>}/>
+        <Route path='/busqueda' element={<BusquedaScreen/>}/>
+      </Routes>
+    </BrowserRouter>
+)
