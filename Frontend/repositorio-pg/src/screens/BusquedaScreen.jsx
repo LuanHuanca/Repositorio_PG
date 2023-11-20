@@ -5,7 +5,6 @@ import TituloImagen from "../components/moleculas/TituloImagen";
 import FiltroLateral from "../components/organismos/FiltroLateral";
 import EntradaBusqueda from "../components/moleculas/EntradaBusqueda";
 import TarjetasTesis from "../components/moleculas/TarjetasTesis";
-import tarjeta from "../json/tarjetas.json"
 import Footer from "../components/organismos/Footer";
 import axios, { Axios } from "axios";
 import { useProyecto } from "../hooks/useProyecto";

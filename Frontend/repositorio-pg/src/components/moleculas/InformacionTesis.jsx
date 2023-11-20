@@ -1,7 +1,7 @@
 import React from 'react'
 import OurButton from '../atomos/OurButton'
 import './InformacionTesis.css'
-import tarjeta from 'C:/Users/ASUS RYZEN 7//Desktop/CLASES/Repositori_PG/Frontend/repositorio-pg/src/json/tarjetaTesis.json'
+import tarjeta from '../json/tarjetaTesis.json'
 
 const InformacionTesis = () => {
   return (

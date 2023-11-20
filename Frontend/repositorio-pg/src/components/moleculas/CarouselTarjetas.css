@@ -1,0 +1,8 @@
+.carouselTarjetas{
+    display: inline-flex;
+}
+.carousel{
+    margin: 20px 0px;
+    overflow-x: scroll;
+
+}
