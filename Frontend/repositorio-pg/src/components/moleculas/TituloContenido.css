@@ -1,0 +1,21 @@
+#contenido {
+    margin: 6px 50px ;
+    padding: 7px;
+}
+#valor{
+    margin: 0px 80px ;
+    padding: 15px;
+    background-color: yellow;
+    border-radius: 20px;
+}
+.titulocontenido-container{
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 30px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px; 
+}
