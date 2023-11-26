@@ -3,7 +3,7 @@ import './TarjetasTesis.css'
 import { NavLink } from "react-router-dom";
 
 
-const TarjetasTesis = ({titulo,autor,fecha,carrera}) => {
+const TarjetasTesis = ({titulo, autor, fecha, carrera}) => {
   return (
     <div className="tarjetas-de-tesis">
       <img src="/src/assets/principito.jpeg" alt="Portada Tesis" />

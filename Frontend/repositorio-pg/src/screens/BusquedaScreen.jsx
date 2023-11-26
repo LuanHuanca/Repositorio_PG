@@ -9,6 +9,7 @@ import Footer from "../components/organismos/Footer";
 import axios, { Axios } from "axios";
 import { useProyecto } from "../hooks/useProyecto";
 import { Loading } from "../components/Loading";
+import { useFetch } from "../useFetch";
 
 const BusquedaScreen = () => {
 
@@ -19,11 +20,6 @@ const BusquedaScreen = () => {
   //Las constantes para realizar la busqueda que por defecto este vacio
   const [search, setSearch] = useState('');
 
-
-  //hacemos el filtrado de proyectos para que muestre unos cuantos nomas, y manejamos la paginacion al mismo tiempo
-  const filteredProyectos = ()=>{
-    return proyectos.slice(currentpage,currentpage+3);
-  }
   //para ir a la siguiente pagina 
   const nextPage = ()=>{
     setCurrentPage(currentpage + 3);
@@ -35,6 +31,8 @@ const BusquedaScreen = () => {
       setCurrentPage(currentpage - 3);
   }
 
+  const baseURL = "http://localhost:3000/todoLosTitulos";
+  const { data } = useFetch(baseURL);
 
   return (
     <div>
@@ -50,22 +48,20 @@ const BusquedaScreen = () => {
             <button onClick={nextPage}>Siguiente</button>
           </div>
           {
-            isLoading && <Loading/>
+            data && data.TodosLosTitulos.map( (busquedaTitulo) => (
+              <TarjetasTesis 
+                key={busquedaTitulo.titulo} 
+                titulo={busquedaTitulo.titulo} 
+                autor={busquedaTitulo.nombre_estudiante} 
+                fecha={'123'} 
+                carrera={busquedaTitulo.nombre_carrera}/>
+            ))
           }
-          <div className="Tarjetas">
-            {
-              //pedimos a nuestra funcion filteredProyectos para su paginacion y filtracion
-              filteredProyectos()?.map((item)=>{
-                return <TarjetasTesis key={item.id} titulo={item.name} autor={item.username} carrera={item.carrera} fecha={item.fecha}/>
-              })
-            }
-          </div>  
         </div>
-
       </div>
       <Footer/>
     </div>
   );
 };
 
-export default BusquedaScreen;
+export default BusquedaScreen
