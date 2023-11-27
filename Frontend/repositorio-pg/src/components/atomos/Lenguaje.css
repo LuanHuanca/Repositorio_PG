@@ -1,31 +1,18 @@
 .elegir-container{
     background-color: transparent;
     width: 300px;
+    margin-right: 50px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    
+    justify-content: space-between;
 }
 
-.elegir-tipo{
-    background-color: transparent;
-    padding: 10px;
-    border: 0 solid transparent;
-    outline: 0;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: medium;
-    font-weight: 600;
-}
-
-.elegir-tipo>option{
-    background-color: transparent transparent;
-}
-
-.btn-acceder{
+.btn{
     background-color: transparent;
     width: auto;
     font-family: 'Courier New', Courier, monospace;
     font-size: medium;
     font-weight: 600;
     border: 0;
+    margin: 0;
 }

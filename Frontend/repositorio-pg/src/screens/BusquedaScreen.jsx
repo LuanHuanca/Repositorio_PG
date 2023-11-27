@@ -1,6 +1,5 @@
 import React, { useEffect, useState} from "react";
 import "./BusquedaScreen.css";
-import AppbarSinInput from "../components/organismos/AppbarSinInput";
 import TituloImagen from "../components/moleculas/TituloImagen";
 import FiltroLateral from "../components/organismos/FiltroLateral";
 import EntradaBusqueda from "../components/moleculas/EntradaBusqueda";
@@ -36,12 +35,12 @@ const BusquedaScreen = () => {
 
   return (
     <div>
-      <AppbarSinInput />
       <TituloImagen />
       <div className="busqueda-filtro">
         <FiltroLateral />
         <div className="forTargets">
           <div className="fondo-busqueda">
+            <h3>Busqueda General</h3>
             <EntradaBusqueda valores={search} accion1={ (event) => setSearch(event.target.value)}/>
             <h3>Resultados de busqueda</h3>
             <button onClick={prevPage}>Anterior</button>
