@@ -7,10 +7,9 @@ const Appbar = () => {
   return (
     <div className='appbar'>
       <div className='appbar-container'>
-        <img src="src\assets\logo ucb.png" alt="Logo UCB" />
+        <img src="src\assets\logo_ucb.png" alt="Logo UCB" />
         <Lenguaje/>
       </div>
-      <EntradaBusqueda/>
     </div>
   )
 }

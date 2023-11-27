@@ -1,6 +1,5 @@
 import React, { useEffect, useState} from "react";
 import "./BusquedaScreen.css";
-import AppbarSinInput from "../components/organismos/AppbarSinInput";
 import TituloImagen from "../components/moleculas/TituloImagen";
 import FiltroLateral from "../components/organismos/FiltroLateral";
 import EntradaBusqueda from "../components/moleculas/EntradaBusqueda";
@@ -38,7 +37,6 @@ const BusquedaScreen = () => {
 
   return (
     <div>
-      <AppbarSinInput />
       <TituloImagen />
       <div className="busqueda-filtro">
         <FiltroLateral />

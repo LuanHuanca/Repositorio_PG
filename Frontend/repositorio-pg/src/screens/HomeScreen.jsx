@@ -9,7 +9,6 @@ import Footer from '../components/organismos/Footer'
 const HomeScreen = () => {
   return (
     <div>
-      <Appbar/>
       <TituloImagen/>
       <TituloContenido valor={"RECIENTE"}/>
       <CarouselTarjetas/>

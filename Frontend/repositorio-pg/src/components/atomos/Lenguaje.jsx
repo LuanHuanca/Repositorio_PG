@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Lenguaje.css"
+import { NavLink } from 'react-router-dom'
 
 const Lenguaje = () => {
   return (
@@ -9,7 +10,7 @@ const Lenguaje = () => {
           <option value="ingles">Ingles</option>
         </select>
         
-        <button className='btn-acceder'>Acceder</button>
+        <NavLink className='btn-acceder'>Acceder</NavLink>
     </div>
   )
 }
