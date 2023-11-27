@@ -5,17 +5,18 @@
     height: 100%;
 }
 .loginscreen img{
-    width: 71.2%;
-    height: 100%;
+    width: 1200px;
+    height: auto;
     margin: 0;
     padding: 0;
 }
 .formulario{
-    width: auto;
+    width: 35%;
     padding: 0;
     margin: 0;
 }
 .formulario-imagenes{
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;

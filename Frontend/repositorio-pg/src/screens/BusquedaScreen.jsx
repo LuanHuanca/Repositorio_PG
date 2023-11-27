@@ -42,6 +42,7 @@ const BusquedaScreen = () => {
         <FiltroLateral />
         <div className="forTargets">
           <div className="fondo-busqueda">
+            <h3>Busqueda General</h3>
             <EntradaBusqueda valores={search} accion1={ (event) => setSearch(event.target.value)}/>
             <h3>Resultados de busqueda</h3>
             <button onClick={prevPage}>Anterior</button>

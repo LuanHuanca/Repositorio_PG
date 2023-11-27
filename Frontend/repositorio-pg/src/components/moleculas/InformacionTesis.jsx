@@ -8,7 +8,7 @@ const InformacionTesis = () => {
     <div className='InformacionTesis-container'>
         <h1>{tarjeta.titulo}</h1>
         <div className='Information-container'>
-            <img src="/src/assets/principito.jpeg" alt="Portada Tesis" />
+            <img src={tarjeta.imgsrc} alt="Portada Tesis" />
             <div className='informacion'>
               <p>Resumen: {tarjeta.resumen}</p>
               <p>Edicion: {tarjeta.edicion}</p>
