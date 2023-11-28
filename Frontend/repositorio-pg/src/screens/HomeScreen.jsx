@@ -6,7 +6,7 @@ import './HomeScreen.css'
 import CarouselTarjetas from '../components/moleculas/CarouselTarjetas'
 import Footer from '../components/organismos/Footer'
 
-const HomeScreen = () => {
+const HomeScreen = ({loggedIn}) => {
   return (
     <div>
       <TituloImagen/>

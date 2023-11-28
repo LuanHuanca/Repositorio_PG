@@ -9,7 +9,7 @@ import axios, { Axios } from "axios";
 import { useProyecto } from "../hooks/useProyecto";
 import { Loading } from "../components/Loading";
 
-const BusquedaScreen = () => {
+const BusquedaScreen = ( {loggedIn}) => {
 
   //en aqui ya colocamos las variables donde guardaremos los que nos regrese la funcion useProyecto
   const { isLoading, proyectos} = useProyecto();

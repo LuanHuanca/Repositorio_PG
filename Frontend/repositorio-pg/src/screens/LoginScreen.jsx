@@ -1,43 +1,46 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { gapi } from "gapi-script";
 import GoogleLogin from "react-google-login";
 import CustomInput from "../components/moleculas/CustomInput";
 import "./LoginScreen.css";
-
-const PantallaSiguiente = ({ user }) => {
-  return (
-    <div>
-      <h2>Bienvenido, {user.name}!</h2>
-      <Link to="/">Volver al inicio</Link>
-    </div>
-  );
-};
+import { useLocalStorage } from "../services/useLocalStorage";
 
 const LoginScreen = () => {
   const clientID =
     "211803212290-uqelcl3mjmgdogkuvh22nusbfgalibst.apps.googleusercontent.com";
-  const [user, setUser] = useState({});
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  const navigate = useNavigate(); // Obtiene la función de navegación
+  const [loggedIn, setLoggedIn] = useLocalStorage("loggedIn", false);
+  const [userName, setUserName] = useLocalStorage("userName", "");
+  const [lastName, setLastName] = useLocalStorage("lastName", "");
+  const [email, setEmail] = useLocalStorage("email", "");
+  const [imgperfil, setImgPerfil] = useLocalStorage("imgPerfil", "");
+  const navigate = useNavigate();
 
   const onSuccess = (response) => {
-    setUser(response.profileObj);
+    const {
+      profileObj: {
+        givenName, // Primer nombre
+        familyName, // Apellido
+        email, // Correo electrónico
+        imageUrl, // URL de la imagen de perfil
+      },
+    } = response;
+    //guardo el nombre del usuario
+    setUserName(givenName);
+    //guardo el apellido del usuario
+    setLastName(familyName);
+    // guardo el email del usuario
+    setEmail(email);
+    //guardo la imagen que tiene en su cuenta en forma de url
+    setImgPerfil(imageUrl);
+    //guardo la sesion para verificar si esta iniciada
     setLoggedIn(true);
-  
-    // Redirige a la pantalla principal con el parámetro de ID
-    navigate(`/`);
+    //navega la pantalla home con exito y logeo ya definido
+    navigate("/");
   };
-  
 
   const onFailure = (response) => {
-    alert("Algo salió mal al iniciar sesión con Google");
-  };
-
-  const handleLogout = () => {
-    setUser({});
-    setLoggedIn(false);
+    console.log("Algo salió mal al iniciar sesión con Google");
   };
 
   useEffect(() => {
@@ -84,9 +87,9 @@ const LoginScreen = () => {
             onSuccess={onSuccess}
             onFailure={onFailure}
             buttonText="Iniciar Sesión con Google"
-            cookiePolicy={"single_host_origin"}
+            cookiePolicy={""}
           />
-          {loggedIn}
+          {loggedIn && <HomeScreen />}
         </div>
       </div>
     </div>

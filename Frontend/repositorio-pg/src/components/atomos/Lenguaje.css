@@ -1,18 +1,20 @@
 .elegir-container{
     background-color: transparent;
-    width: 300px;
+    width: fit-content;
     margin-right: 50px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .btn{
     background-color: transparent;
-    width: auto;
+    width: fit-content;
     font-family: 'Courier New', Courier, monospace;
     font-size: medium;
     font-weight: 600;
     border: 0;
-    margin: 0;
+    margin: 20px;
+    text-decoration: none; /* Elimina la subrayado por defecto */
+    color: inherit; /* Usa el color de texto por defecto del padre (normalmente negro) */
+    cursor: pointer; /* Cambia el cursor al puntero cuando se coloca encima */
 }
