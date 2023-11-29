@@ -24,12 +24,11 @@
 
 .tarjeta-container button{
     margin-left: 15px;
-    width: 40%;
+    width: fit-content;
     margin: 5px;
     background: transparent ;
     border: 0;
     font-weight: 600;
     display: flex;
-
-
+    cursor: pointer;
 }

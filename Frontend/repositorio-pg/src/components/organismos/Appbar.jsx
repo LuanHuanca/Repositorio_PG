@@ -1,18 +1,25 @@
-import React from 'react'
-import EntradaBusqueda from '../moleculas/EntradaBusqueda'
-import './Appbar.css'
-import Lenguaje from '../atomos/Lenguaje'
+import React from "react";
+import "./Appbar.css";
+import Lenguaje from "../atomos/Lenguaje";
+import { NavLink } from "react-router-dom";
+import { useLocalStorage } from "../../services/useLocalStorage";
 
 const Appbar = () => {
-  return (
-    <div className='appbar'>
-      <div className='appbar-container'>
-        <img src="src\assets\logo ucb.png" alt="Logo UCB" />
-        <Lenguaje/>
-      </div>
-      <EntradaBusqueda/>
-    </div>
-  )
-}
+  // Utiliza useLocalStorage para obtener los valores
+  const [loggedIn] = useLocalStorage("loggedIn", false);
+  const [userName] = useLocalStorage("userName", "");
+  
 
-export default Appbar
+  return (
+    <div className="appbar">
+      <div className="appbar-container">
+        <NavLink to="/">
+          <img src="src\assets\logo_ucb.png" alt="Logo UCB" />
+        </NavLink>
+        <Lenguaje loggedIn={loggedIn} userName={userName} />
+      </div>
+    </div>
+  );
+};
+
+export default Appbar;

@@ -10,8 +10,8 @@
 
 .tarjetas-de-tesis img{
     margin: 10px;
-    width: auto;
-    height: auto;
+    width: 250px;
+    height: 250px;
 }
 
 .tarjeta-informacion{
@@ -36,4 +36,5 @@
     border: 1px solid black;
     border-radius: 30px;
     font-size: 20px;
+    cursor: pointer;
 }

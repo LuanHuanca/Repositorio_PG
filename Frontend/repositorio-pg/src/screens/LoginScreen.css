@@ -1,0 +1,50 @@
+.loginscreen{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+.loginscreen img{
+    width: 1200px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+.formulario{
+    width: 35%;
+    padding: 0;
+    margin: 0;
+}
+.formulario-imagenes{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.formulario-imagenes img{
+    width: 40%;
+    height: 100%;
+    object-fit: fill;
+    padding: 20px;
+}
+#titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    letter-spacing: 1.8px;
+}
+.formulario-inputs{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin: 20px 50px;
+}
+.formulario-inputs button{
+    background: #35B9F1;
+    border: 1px solid #000;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px 20px;
+}

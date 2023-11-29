@@ -5,19 +5,19 @@ import TituloContenido from '../components/moleculas/TituloContenido'
 import './HomeScreen.css'
 import CarouselTarjetas from '../components/moleculas/CarouselTarjetas'
 import Footer from '../components/organismos/Footer'
+import Anuncios from '../components/moleculas/Anuncios'
 
 const HomeScreen = () => {
   return (
     <div>
-      <Appbar/>
       <TituloImagen/>
       <TituloContenido valor={"RECIENTE"}/>
-      <CarouselTarjetas/>
+      <CarouselTarjetas baseurl={"http://localhost:3000/anioDes"} point={"anioDes"} />
+      <Anuncios/>
       <TituloContenido valor={"DESTACADO"}/>
       <div className='destacado-container'>
-        <CarouselTarjetas/>
+        <CarouselTarjetas baseurl={"http://localhost:3000/destacados"} point={"destacados"} />
       </div>
-      <Footer/>
     </div>
   )
 }

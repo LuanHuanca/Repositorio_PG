@@ -6,9 +6,7 @@ import Footer from '../components/organismos/Footer'
 const TarjetaTesisScreen = () => {
   return (
     <div className='TarjetaTesisScreen-container'>
-      <Appbar/>
       <TarjetaInformacion/>
-      <Footer/>
     </div>
   )
 }
