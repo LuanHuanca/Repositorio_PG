@@ -1,10 +1,13 @@
 import React from 'react'
+import './AnuncioTarjeta.css'
 
-const AnuncioTarjeta = () => {
+const AnuncioTarjeta = ({imagen, imagenDescrip,url}) => {
   return (
-    <div className='anuncio-tarjeta'>
-      <img src="" alt="" />
-    </div>
+    <a href={url} target="_blank">
+      <div className='tarjetaAnuncio'>
+        <img src={imagen} alt={imagenDescrip} />
+      </div>
+    </a>
   )
 }
 

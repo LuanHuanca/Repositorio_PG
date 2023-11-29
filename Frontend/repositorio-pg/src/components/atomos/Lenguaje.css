@@ -17,4 +17,14 @@
     text-decoration: none; /* Elimina la subrayado por defecto */
     color: inherit; /* Usa el color de texto por defecto del padre (normalmente negro) */
     cursor: pointer; /* Cambia el cursor al puntero cuando se coloca encima */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+#icono{
+    width: 35px;
+    height: 35px;
+    padding: 10px;
+    color: black;
+}
+

@@ -5,18 +5,19 @@ import TituloContenido from '../components/moleculas/TituloContenido'
 import './HomeScreen.css'
 import CarouselTarjetas from '../components/moleculas/CarouselTarjetas'
 import Footer from '../components/organismos/Footer'
+import Anuncios from '../components/moleculas/Anuncios'
 
-const HomeScreen = ({loggedIn}) => {
+const HomeScreen = () => {
   return (
     <div>
       <TituloImagen/>
       <TituloContenido valor={"RECIENTE"}/>
       <CarouselTarjetas/>
+      <Anuncios/>
       <TituloContenido valor={"DESTACADO"}/>
       <div className='destacado-container'>
         <CarouselTarjetas/>
       </div>
-      <Footer/>
     </div>
   )
 }

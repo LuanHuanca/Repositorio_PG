@@ -5,6 +5,8 @@ import "./Lenguaje.css";
 import { GoogleLogout } from "react-google-login";
 
 const Lenguaje = ({ loggedIn, userName }) => {
+  const clientID =
+  "211803212290-uqelcl3mjmgdogkuvh22nusbfgalibst.apps.googleusercontent.com";
   const handleLogout = () => {
     console.log("se cerro la sesion correctamente");
     localStorage.clear();
@@ -22,7 +24,11 @@ const Lenguaje = ({ loggedIn, userName }) => {
           <NavLink className="btn" to="/agregar-proyecto">
             Subir Proyecto
           </NavLink>
-          <NavLink className="btn">Bienvenido {userName}</NavLink>
+          
+          <NavLink to="/perfil" className="btn">
+            <Icon id="icono" icon="mdi:account-circle-outline"/>
+            Bienvenido {userName}
+          </NavLink>
         </>
       )}
 
@@ -33,11 +39,14 @@ const Lenguaje = ({ loggedIn, userName }) => {
         <></>
       ) : (
         <>
-          <GoogleLogout
-            clientId="tu-client-id-de-google"
+          <NavLink className="btn" onClick={handleLogout}>
+            Cerrar Sesion
+          </NavLink>
+          {/* <GoogleLogout
+            clientId={clientID}
             buttonText="Cerrar Sesión"
             onLogoutSuccess={handleLogout}
-          />
+          /> */}
         </>
       )}
     </div>

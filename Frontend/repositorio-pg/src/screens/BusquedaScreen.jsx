@@ -9,7 +9,7 @@ import axios, { Axios } from "axios";
 import { useProyecto } from "../hooks/useProyecto";
 import { Loading } from "../components/Loading";
 
-const BusquedaScreen = ( {loggedIn}) => {
+const BusquedaScreen = () => {
 
   //en aqui ya colocamos las variables donde guardaremos los que nos regrese la funcion useProyecto
   const { isLoading, proyectos} = useProyecto();
@@ -43,7 +43,7 @@ const BusquedaScreen = ( {loggedIn}) => {
         <div className="forTargets">
           <div className="fondo-busqueda">
             <h3>Busqueda General</h3>
-            <EntradaBusqueda valores={search} accion1={ (event) => setSearch(event.target.value)}/>
+            <EntradaBusqueda valores={search}/>
             <h3>Resultados de busqueda</h3>
             <button onClick={prevPage}>Anterior</button>
             <button onClick={nextPage}>Siguiente</button>
@@ -62,7 +62,6 @@ const BusquedaScreen = ( {loggedIn}) => {
         </div>
 
       </div>
-      <Footer/>
     </div>
   );
 };

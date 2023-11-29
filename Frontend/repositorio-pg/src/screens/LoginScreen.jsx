@@ -5,6 +5,7 @@ import GoogleLogin from "react-google-login";
 import CustomInput from "../components/moleculas/CustomInput";
 import "./LoginScreen.css";
 import { useLocalStorage } from "../services/useLocalStorage";
+import HomeScreen from "./HomeScreen";
 
 const LoginScreen = () => {
   const clientID =
@@ -70,7 +71,7 @@ const LoginScreen = () => {
           Para iniciar la sesión, ingresa tu usuario y contraseña
         </h4>
         <div className="formulario-inputs">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={onSuccess}>
             <CustomInput
               title={"Usuario :"}
               placeholder={"Ingrese su nombre de usuario"}
@@ -89,7 +90,7 @@ const LoginScreen = () => {
             buttonText="Iniciar Sesión con Google"
             cookiePolicy={""}
           />
-          {loggedIn && <HomeScreen />}
+          {loggedIn}
         </div>
       </div>
     </div>

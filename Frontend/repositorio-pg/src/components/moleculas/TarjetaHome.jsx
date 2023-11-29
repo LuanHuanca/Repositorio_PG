@@ -6,7 +6,7 @@ import './TarjetaHome.css';
 const TarjetaHome = ({ imagen, imagenDescrip, titulo, Descripcion, fecha }) => {
 
   return (
-    <NavLink to="/tarjetaTesis"  style={{ textDecoration: 'none' }}>
+    <NavLink to="/tarjetaTesis"  className="navlink">
       <div className='tarjetaHome'>
         <img src={imagen} alt={imagenDescrip} />
         <div className='tarjetaHome-container'>

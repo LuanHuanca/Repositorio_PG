@@ -5,7 +5,7 @@ const CustomInput = ({title,placeholder,onChange,value,name}) => {
   return (
     <div className='custom-input-container'>
       <span>{title}</span>
-      <input type="text" placeholder={placeholder} onChange={onChange} value={value} name={name}/>
+      <input type="text" placeholder={placeholder} onChange={onChange} value={value} name={name} required/>
     </div>
   )
 }
