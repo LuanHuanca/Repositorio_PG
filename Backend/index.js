@@ -147,7 +147,7 @@ app.get('/busquedaPorAutor',(req,res)=>{
         p.titulo AS "TítuloDelProyecto",
         p.resumen AS "Resumen",
         g.anio AS "Gestión",
-        p.keywords AS "Palabras Clave",
+        p.keywords AS "PalabrasClave",
         pe_autor.nombre AS "Autor",
         pe_tutor.nombre AS "Tutor",
         c.nombre_carrera AS "Carrera"
@@ -294,7 +294,7 @@ app.get('/general',(req,res)=>{
         "Visitas Totales" DESC;`;
     db.query(q, (err,result)=>{
         if(err){
-            return res.json({Error: "Error al obtener destacados"})
+            return res.json({Error: "Error al obtener general"})
         }
         return res.json({destacados:result});
     });

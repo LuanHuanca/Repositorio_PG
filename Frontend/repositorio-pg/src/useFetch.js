@@ -6,21 +6,31 @@ export function useFetch(url, key) {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(url)
-        .then((response) => {
+        const fetchData = async () => {
+        try {
+            const response = await fetch(url);
+
             if (!response.ok) {
-            throw new Error("Network response was not ok");
+            throw new Error("Network request failed");
             }
-            return response.json();
-        })
-        .then((result) => {
+
+            const result = await response.json();
+
+            // Verifica si la clave proporcionada existe en los datos
+            if (key && result.hasOwnProperty(key)) {
             setData(result[key]);
+            } else {
+            setData(result);
+            }
+
             setLoading(false);
-        })
-        .catch((err) => {
-            setError(err);
+        } catch (error) {
+            setError(error);
             setLoading(false);
-        });
+        }
+        };
+
+        fetchData();
     }, [url, key]);
 
     return { data, loading, error };
