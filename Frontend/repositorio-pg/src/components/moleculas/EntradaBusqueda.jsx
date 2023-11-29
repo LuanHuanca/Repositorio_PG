@@ -3,17 +3,18 @@ import "./EntradaBusqueda.css";
 import TipoBusqueda from "../atomos/TipoBusqueda";
 import SearchButton from "../atomos/SearchButton";
 
-const EntradaBusqueda = ({valores,accion1,accion2}) => {
+const EntradaBusqueda = ({onChange, value, name, onClick }) => {
   return (
     <div className="container">
       <input
-        value={valores}
-        className="input-container"
         type="text"
         placeholder="Ingrese su busqueda"
-        onChange={accion1}
+        onChange={onChange}
+        value={value}
+        name={name}
+        className="input-container"
       />
-      <SearchButton direccion={"/busqueda"} action={accion2}/>
+      <SearchButton onClick={onClick}/>
     </div>
   );
 };

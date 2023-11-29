@@ -33,7 +33,7 @@ app.get('/busquedaPorTitulo',(req,res)=>{
         p.titulo AS "TítuloDelProyecto",
         p.resumen AS "Resumen",
         g.anio AS "Gestión",
-        p.keywords AS "Palabras Clave",
+        p.keywords AS "PalabrasClave",
         pe_autor.nombre AS "Autor",
         pe_tutor.nombre AS "Tutor",
         c.nombre_carrera AS "Carrera"
