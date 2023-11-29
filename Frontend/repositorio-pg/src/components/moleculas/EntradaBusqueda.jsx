@@ -6,7 +6,6 @@ import SearchButton from "../atomos/SearchButton";
 const EntradaBusqueda = ({valores,accion1,accion2}) => {
   return (
     <div className="container">
-      <TipoBusqueda/>
       <input
         value={valores}
         className="input-container"

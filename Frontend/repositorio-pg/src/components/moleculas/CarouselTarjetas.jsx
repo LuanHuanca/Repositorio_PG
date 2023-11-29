@@ -9,7 +9,7 @@ const CarouselTarjetas = () => {
         <div className="carouselTarjetas">
       {tarjeta.map((item) => {
         return (
-          <TarjetaHome
+          <TarjetaHome  
             key={item.id}
             titulo={item.titulo}
             imagen={item.imgsrc}
