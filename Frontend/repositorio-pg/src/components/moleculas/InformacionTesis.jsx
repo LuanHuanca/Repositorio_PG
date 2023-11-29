@@ -7,10 +7,13 @@ import { useFetch } from '../../useFetch'
 
 const InformacionTesis = () => {
   const location = useLocation();
-  const titulo = location.state?.titulo || {}; // Accede a los datos desde la ubicación
+  const titulo = location.state?.titulo || {};
+  
+  console.log(titulo);
+  console.log("hole");
 
-  const baseURL = `http://localhost:3000/busquedaPorTitulo?titulo=${titulo}`;
-  const { data, loading, error } = useFetch(baseURL, "busquedaPorTitulo");
+  const baseURL = `http://localhost:3000/general?general=${titulo}`;
+  const { data, loading, error } = useFetch(baseURL, "general");
 
   if (loading) {
     return <p>Cargando...</p>;
@@ -19,10 +22,9 @@ const InformacionTesis = () => {
   if (error) {
     return <p>Error: {error.message}</p>;
   }
-
   return (
     <div className='InformacionTesis-container'>
-        <h1>{data && data.TítuloDelProyecto}</h1>
+        <h1>{data.TítulodelProyecto}</h1>
         <div className='Information-container'>
             <img src='src/assets/imagen de tesis.png' alt="Portada Tesis" />
             <div className='informacion'>

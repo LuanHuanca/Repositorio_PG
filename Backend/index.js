@@ -168,7 +168,7 @@ app.get('/busquedaPorAutor',(req,res)=>{
     JOIN 
         carrera c ON p.carrera_id = c.id
     WHERE 
-        pe_autor.nombre LIKE '%S%';`;
+        pe_autor.nombre LIKE (?);`;
     db.query(q,[`%${autor}%`], (err,result)=>{
         if(err){
             return res.json({Error: "Error al buscar por Titulo"})
@@ -257,46 +257,40 @@ app.get('/destacados',(req,res)=>{
 
 // para ir a la general
 app.get('/general',(req,res)=>{
+    const {general} = req.query;
     const q = `
     SELECT 
-        p.titulo AS "TítuloDelProyecto",
-        p.resumen AS "Resumen",
-        g.anio AS "Gestión",
-        p.keywords AS "Palabras Clave",
-        pe_autor.nombre AS "Autor",
-        pe_tutor.nombre AS "Tutor",
-        c.nombre_carrera AS "Carrera",
-        SUM(es.valor) AS "Visitas Totales"
-    FROM 
-        proyecto p
-    JOIN 
-        asignacion a ON p.id_asignacion = a.id_asignacion
-    JOIN 
-        estudiante e ON a.id_estudiante = e.id_estudiante
-    JOIN 
-        persona pe_autor ON e.id_persona = pe_autor.id_persona
-    JOIN 
-        tutor t ON a.id_tutor = t.id_tutor
-    JOIN 
-        persona pe_tutor ON t.persona_id_persona = pe_tutor.id_persona
-    JOIN 
-        gestion g ON a.id_gestion = g.id_gestion
-    JOIN 
-        carrera c ON p.carrera_id = c.id
-    JOIN  
-        estadisticas es ON p.id_proyecto = es.id_proyecto
-    WHERE 
-        p.titulo = VellaquininPotosi' AND
-        es.tipo_metrica = 'Visitas'
-    GROUP BY 
-        p.id_proyecto, p.titulo, p.resumen, g.anio, p.keywords, pe_autor.nombre, pe_tutor.nombre, c.nombre_carrera
-    ORDER BY 
-        "Visitas Totales" DESC;`;
-    db.query(q, (err,result)=>{
+    p.titulo AS 'TítulodelProyecto',
+    p.resumen AS 'Resumen',
+    g.anio AS 'AñoDeGestión',
+    p.keywords AS 'PalabrasClave',
+    pe_autor.nombre AS 'Autor',
+    pe_tutor.nombre AS 'Tutor',
+    c.nombre_carrera AS 'Carrera',
+    p.drive_link AS 'EnlaceDeDrive'
+FROM 
+    proyecto p
+JOIN 
+    asignacion a ON p.id_asignacion = a.id_asignacion
+JOIN 
+    estudiante e ON a.id_estudiante = e.id_estudiante
+JOIN 
+    persona pe_autor ON e.id_persona = pe_autor.id_persona
+JOIN 
+    tutor t ON a.id_tutor = t.id_tutor
+JOIN 
+    persona pe_tutor ON t.persona_id_persona = pe_tutor.id_persona
+JOIN 
+    gestion g ON a.id_gestion = g.id_gestion
+JOIN 
+    carrera c ON p.carrera_id = c.id
+WHERE 
+    p.titulo LIKE (?);`;
+    db.query(q, [`%${general}%`], (err,result)=>{
         if(err){
             return res.json({Error: "Error al obtener general"})
         }
-        return res.json({destacados:result});
+        return res.json({general:result});
     });
 });
 
