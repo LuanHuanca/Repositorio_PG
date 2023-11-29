@@ -11,7 +11,6 @@ import { useNavigate } from "react-router-dom";
 
 const BusquedaScreen = () => {
   const navigate = useNavigate();
-  const { isLoading, proyectos } = useProyecto();
 
   const [nombreProyecto, setNombreProyecto] = useState("");
 
@@ -31,12 +30,11 @@ const BusquedaScreen = () => {
               onChange={handleChangeNombre}
               value={nombreProyecto}
               name="nombreProyecto"
-              onClick={()=>navigate(`/busqueda?nombre=${nombreProyecto}`)}
+              onClick={()=>navigate(`/busqueda?nombreProyecto=${nombreProyecto}`)}
             />
             <h3>Resultados de busqueda</h3>
           </div>
-          {isLoading && <Loading />}
-          <BusquedaProyectos/>
+          <BusquedaProyectos/>  
         </div>
       </div>
     </div>

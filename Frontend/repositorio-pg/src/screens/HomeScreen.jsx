@@ -16,7 +16,7 @@ const HomeScreen = () => {
       <Anuncios/>
       <TituloContenido valor={"DESTACADO"}/>
       <div className='destacado-container'>
-        <CarouselTarjetas/>
+        <CarouselTarjetas baseurl={"http://localhost:3000/destacados"} point={"destacados"}/>
       </div>
     </div>
   )

@@ -1,9 +1,11 @@
 import React from "react";
 import './TarjetasTesis.css'
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 
-const TarjetasTesis = ({titulo,autor,fecha,carrera}) => {
+const TarjetasTesis = ({titulo, autor, fecha, carrera}) => {
+  const navigate = useNavigate();
+
   return (
     <div className="tarjetas-de-tesis">
       <img src="/src/assets/imagen de tesis.png" alt="Portada Tesis" />
@@ -14,7 +16,7 @@ const TarjetasTesis = ({titulo,autor,fecha,carrera}) => {
         <h3>carrera: {carrera}</h3>
         <div className="boton-container">
           <button>
-            <NavLink>Ingresar</NavLink>
+            <NavLink to={{ pathname: '/tarjetaTesis', state: { titulo: titulo } }}>Ingresar</NavLink>
           </button>
         </div>
       </div>
