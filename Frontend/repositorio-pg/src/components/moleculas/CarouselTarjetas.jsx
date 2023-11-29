@@ -20,15 +20,14 @@ const CarouselTarjetas = ( {baseurl, point} ) => {
   return (
     <div className="carousel">
         <div className="carouselTarjetas">
-      {data.map((item) => {
+      {data && data.map((item) => {
         return (
           <TarjetaHome  
-            key={item.id}
-            titulo={item.titulo}
-            imagen={item.imgsrc}
-            imagenDescrip={item.descripImagen}
-            Descripcion={item.descripcion}
-            fecha={item.fecha}
+            key={item.TítuloDelProyecto}
+            titulo={item.TítuloDelProyecto}
+            // imagenDescrip={item.descripImagen}
+            Descripcion={item.Resumen}
+            fecha={item.Gestión}
           />
         );
       })}
