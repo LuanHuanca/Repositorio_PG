@@ -9,10 +9,6 @@ const TarjetasTesis = ({titulo, autor, fecha, carrera}) => {
     navigate(`/tarjetaTesis?proyecto=${proyecto}`);
     console.log(proyecto);
   }
-  const enviarKey = (proyecto) => {
-    navigate(`/tarjetaTesis?proyecto=${proyecto}`);
-    console.log(proyecto);
-  };
   return (
     <div className="tarjetas-de-tesis">
       <img src="/src/assets/imagen de tesis.png" alt="Portada Tesis" />

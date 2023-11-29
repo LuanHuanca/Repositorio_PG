@@ -260,32 +260,32 @@ app.get('/general',(req,res)=>{
     const {general} = req.query;
     const q = `
     SELECT 
-    p.titulo AS 'TítulodelProyecto',
-    p.resumen AS 'Resumen',
-    g.anio AS 'AñoDeGestión',
-    p.keywords AS 'PalabrasClave',
-    pe_autor.nombre AS 'Autor',
-    pe_tutor.nombre AS 'Tutor',
-    c.nombre_carrera AS 'Carrera',
-    p.drive_link AS 'EnlaceDeDrive'
-FROM 
-    proyecto p
-JOIN 
-    asignacion a ON p.id_asignacion = a.id_asignacion
-JOIN 
-    estudiante e ON a.id_estudiante = e.id_estudiante
-JOIN 
-    persona pe_autor ON e.id_persona = pe_autor.id_persona
-JOIN 
-    tutor t ON a.id_tutor = t.id_tutor
-JOIN 
-    persona pe_tutor ON t.persona_id_persona = pe_tutor.id_persona
-JOIN 
-    gestion g ON a.id_gestion = g.id_gestion
-JOIN 
-    carrera c ON p.carrera_id = c.id
-WHERE 
-    p.titulo LIKE (?);`;
+        p.titulo AS 'TítulodelProyecto',
+        p.resumen AS 'Resumen',
+        g.anio AS 'Gestión',
+        p.keywords AS 'PalabrasClave',
+        pe_autor.nombre AS 'Autor',
+        pe_tutor.nombre AS 'Tutor',
+        c.nombre_carrera AS 'Carrera',
+        p.drive_link AS 'EnlaceDeDrive'
+    FROM 
+        proyecto p
+    JOIN 
+        asignacion a ON p.id_asignacion = a.id_asignacion
+    JOIN 
+        estudiante e ON a.id_estudiante = e.id_estudiante
+    JOIN 
+        persona pe_autor ON e.id_persona = pe_autor.id_persona
+    JOIN 
+        tutor t ON a.id_tutor = t.id_tutor
+    JOIN 
+        persona pe_tutor ON t.persona_id_persona = pe_tutor.id_persona
+    JOIN 
+        gestion g ON a.id_gestion = g.id_gestion
+    JOIN 
+        carrera c ON p.carrera_id = c.id
+    WHERE 
+        p.titulo LIKE (?);`;
     db.query(q, [`%${general}%`], (err,result)=>{
         if(err){
             return res.json({Error: "Error al obtener general"})

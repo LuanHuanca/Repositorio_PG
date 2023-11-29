@@ -10,8 +10,8 @@ const InformacionTesis = () => {
   const searchParams = new URLSearchParams(location.search);
   const proyecto = searchParams.get("proyecto");
 
-  const baseURL = `http://localhost:3000/busquedaPorTitulo?titulo=${proyecto}`;
-  const { data, loading, error } = useFetch(baseURL, "busquedaPorTitulo");
+  const baseURL = `http://localhost:3000/general?general=${proyecto}`;
+  const { data, loading, error } = useFetch(baseURL, "general");
 
   if (loading) {
     return <p>Cargando...</p>;
