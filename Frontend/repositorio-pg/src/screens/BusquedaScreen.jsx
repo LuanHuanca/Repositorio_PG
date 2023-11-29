@@ -31,7 +31,15 @@ const BusquedaScreen = () => {
   }
 
   const baseURL = "http://localhost:3000/todoLosTitulos";
-  const { data } = useFetch(baseURL);
+  const { data, loading, error } = useFetch(baseURL, "TodosLosTitulos");
+
+  if (loading) {
+    return <p>Cargando...</p>;
+  }
+  
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
 
   return (
     <div>
@@ -47,13 +55,13 @@ const BusquedaScreen = () => {
             <button onClick={nextPage}>Siguiente</button>
           </div>
           {
-            data && data.TodosLosTitulos.map( (busquedaTitulo) => (
+            data && data.map( (busquedaTitulo) => (
               <TarjetasTesis 
-                key={busquedaTitulo.titulo} 
-                titulo={busquedaTitulo.titulo} 
-                autor={busquedaTitulo.nombre_estudiante} 
-                fecha={'123'} 
-                carrera={busquedaTitulo.nombre_carrera}/>
+                key={busquedaTitulo.TítuloDelProyecto} 
+                titulo={busquedaTitulo.TítuloDelProyecto} 
+                autor={busquedaTitulo.Autor} 
+                fecha={busquedaTitulo.Gestión} 
+                carrera={busquedaTitulo.Carrera}/>
             ))
           }
         </div>
