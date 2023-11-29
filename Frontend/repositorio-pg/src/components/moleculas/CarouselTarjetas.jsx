@@ -22,12 +22,13 @@ const CarouselTarjetas = ( {baseurl, point} ) => {
         <div className="carouselTarjetas">
       {data.map((item) => {
         return (
-          <TarjetaHome
-            key={item.TítuloDelProyecto}
-            titulo={item.TítuloDelProyecto}
-            imagenDescrip={'no carga'}
-            Descripcion={item.Resumen}
-            fecha={item.Gestión}
+          <TarjetaHome  
+            key={item.id}
+            titulo={item.titulo}
+            imagen={item.imgsrc}
+            imagenDescrip={item.descripImagen}
+            Descripcion={item.descripcion}
+            fecha={item.fecha}
           />
         );
       })}

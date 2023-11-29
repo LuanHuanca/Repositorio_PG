@@ -1,11 +1,12 @@
 // TarjetaHome.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,NavLink } from 'react-router-dom';
 import './TarjetaHome.css';
 
-const TarjetaHome = ({ imagenDescrip, titulo, Descripcion, fecha }) => {
+const TarjetaHome = ({ imagen, imagenDescrip, titulo, Descripcion, fecha }) => {
+
   return (
-    <Link to="/tarjetaTesis"  style={{ textDecoration: 'none' }}>
+    <NavLink to="/tarjetaTesis"  className="navlink">
       <div className='tarjetaHome'>
       <img src="/src/assets/imagen de tesis.png" alt={imagenDescrip} />
         <div className='tarjetaHome-container'>
@@ -16,7 +17,7 @@ const TarjetaHome = ({ imagenDescrip, titulo, Descripcion, fecha }) => {
           <h4>{fecha}</h4>
         </div>
       </div>
-    </Link>
+    </NavLink>
   );
 };
 

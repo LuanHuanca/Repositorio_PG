@@ -1,5 +1,14 @@
 .anuncios h2{
-    font-size: 35px;
-    font-weight: bold;
+    font-family: Lexend Giga;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
     margin-left: 30px;
+}
+.carousel-anuncios{
+    display: flex;
+    margin: 20px 0px;
+    overflow-x: scroll;
+
 }

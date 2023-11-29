@@ -5,30 +5,26 @@ import BusquedaScreen from "./screens/BusquedaScreen";
 import TarjetaTesisScreen from "./screens/TarjetaTesisScreen";
 import Appbar from "./components/organismos/Appbar";
 import LoginScreen from "./screens/LoginScreen";
-
+import PerfilScreen from "./screens/PerfilScreen";
+import Footer from "./components/organismos/Footer";
 
 function App() {
   const location = useLocation();
-  const hideNavBarRoutes = [
+  const hideRoutes = [
     "/login",
   ];
-  // const [selectedItems, setSelectedItems] = useState([]);
-  // const addItem = (item) => {
-  //   setSelectedItems([...selectedItems, item]);
-  // };
-  // const [selectedMesa,setSelectedMesa] = useState([]);
-  // const addMesa = (mesa)=>{
-  //   setSelectedMesa([...selectedMesa,mesa]);
-  // }
+
   return (
     <div className="App">
-        {!hideNavBarRoutes.includes(location.pathname) && <Appbar/>}
+        {!hideRoutes.includes(location.pathname) && <Appbar />}
       <Routes>
-        <Route path="/" element={<HomeScreen/>} />
-        <Route path="/busqueda" element={<BusquedaScreen/>}/>
-        <Route path="/tarjetaTesis" element={<TarjetaTesisScreen/>}/>
-        <Route path="/login" element={<LoginScreen/>}/>
+        <Route path="/" element={<HomeScreen />} />
+        <Route path="/busqueda" element={<BusquedaScreen />}/>
+        <Route path="/tarjetaTesis" element={<TarjetaTesisScreen />}/>
+        <Route path="/login" element={<LoginScreen />}/>
+        <Route path="/perfil" element={<PerfilScreen/>} />
       </Routes>
+      {!hideRoutes.includes(location.pathname) && <Footer/>}
     </div>
   );
 }

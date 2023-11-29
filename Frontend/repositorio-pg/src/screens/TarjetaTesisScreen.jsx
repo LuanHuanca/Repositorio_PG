@@ -7,7 +7,6 @@ const TarjetaTesisScreen = () => {
   return (
     <div className='TarjetaTesisScreen-container'>
       <TarjetaInformacion/>
-      <Footer/>
     </div>
   )
 }

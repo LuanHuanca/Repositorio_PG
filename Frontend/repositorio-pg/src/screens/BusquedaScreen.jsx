@@ -49,7 +49,7 @@ const BusquedaScreen = () => {
         <div className="forTargets">
           <div className="fondo-busqueda">
             <h3>Busqueda General</h3>
-            <EntradaBusqueda valores={search} accion1={ (event) => setSearch(event.target.value)}/>
+            <EntradaBusqueda valores={search}/>
             <h3>Resultados de busqueda</h3>
             <button onClick={prevPage}>Anterior</button>
             <button onClick={nextPage}>Siguiente</button>
@@ -66,7 +66,6 @@ const BusquedaScreen = () => {
           }
         </div>
       </div>
-      <Footer/>
     </div>
   );
 };
