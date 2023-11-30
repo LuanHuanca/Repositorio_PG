@@ -25,53 +25,24 @@ const EnvioProyectoScreen = () => {
   const [archivo, setArchivo] = useState("");
 
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Construir el objeto con los datos del formulario
-    const proyectoData = {
-      carrera,
-      tituloProyecto,
-      apellidoAutor,
-      nombreAutor,
-      apellidoTutor,
-      nombreTutor,
-      apellidoRelator,
-      nombreRelator,
-      gestion,
-      resumen,
-      abstract,
-      palabrasClave,
-      archivo
-    };
-    //phelmme
-
-    try {
-      const response = await fetch("http://172.18.0.125:3000/agregarDatosProyecto", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          // Puedes incluir otros encabezados según tus necesidades
-        },
-        body: JSON.stringify(proyectoData),
-      });
-
-      if (response.ok) {
-        // Aquí puedes manejar la respuesta exitosa
-        dialogoSuperior("success", "Proyecto cargado con éxito");
-        // Limpiar los campos después de enviar el formulario
-        setCarrera("");
-        setTituloProyecto("");
-        // Limpiar otros campos...
-      } else {
-        // Aquí puedes manejar la respuesta de error
-        dialogoSuperior("error", "Hubo un error al cargar el proyecto");
-      }
-    } catch (error) {
-      console.error("Error al enviar el proyecto:", error);
-    }
+    // Aqui ponemos el dialogo de confirmacion debido a que se cargo correctamente el formulario
+    dialogoSuperior("success", "Proyecto cargado con exito");
+    // Limpiar los campos después de enviar el formulario
+    setCarrera("");
+    setTituloProyecto("");
+    setApellidoAutor("");
+    setNombreAutor("");
+    setApellidoTutor("");
+    setNombreTutor("");
+    setGestion("");
+    setResumen("");
+    setAbstract("");
+    setPalabrasClave("");
+    setKeywords("");
+    setArchivo("");
   };
-
 
 
   return (
@@ -218,36 +189,3 @@ const EnvioProyectoScreen = () => {
 export default EnvioProyectoScreen;
 
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log("Los datos son: ");
-  //   console.log(carrera);
-  //   console.log(tituloProyecto);
-  //   console.log(apellidoAutor);
-  //   console.log(nombreAutor);
-  //   console.log(apellidoTutor);
-  //   console.log(nombreTutor);
-  //   console.log(gestion);
-  //   console.log(resumen);
-  //   console.log(abstract);
-  //   console.log(palabrasClave);
-  //   console.log(keywords);
-  //   console.log(archivo);
-
-
-  //   // Aqui ponemos el dialogo de confirmacion debido a que se cargo correctamente el formulario
-  //   dialogoSuperior("success", "Proyecto cargado con exito");
-  //   // Limpiar los campos después de enviar el formulario
-  //   setCarrera("");
-  //   setTituloProyecto("");
-  //   setApellidoAutor("");
-  //   setNombreAutor("");
-  //   setApellidoTutor("");
-  //   setNombreTutor("");
-  //   setGestion("");
-  //   setResumen("");
-  //   setAbstract("");
-  //   setPalabrasClave("");
-  //   setKeywords("");
-  //   setArchivo("");
-  // };

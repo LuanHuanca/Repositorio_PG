@@ -17,6 +17,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    color: #FFFF;
 }
 .footertexto{
     width: 70%;
