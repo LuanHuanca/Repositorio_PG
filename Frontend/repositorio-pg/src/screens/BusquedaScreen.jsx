@@ -22,7 +22,7 @@ const BusquedaScreen = () => {
     <div>
       <TituloImagen />
       <div className="busqueda-filtro">
-        <FiltroLateral />
+        {/* <FiltroLateral /> */}
         <div className="forTargets">
           <div className="fondo-busqueda">
             <h3>Busqueda General</h3>

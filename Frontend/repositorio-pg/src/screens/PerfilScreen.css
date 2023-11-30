@@ -1,3 +1,7 @@
+.PerfilScreen-container{
+    display: flex;
+    justify-content: center;
+}
 .tarjetaPerfil{
     background-color: rgb(195, 199, 199);
     display: flex;

@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import CustomInput from "../components/moleculas/CustomInput";
 import "./EnvioProyectoScreen.css";
 import { dialogoSuperior } from "../services/sweetalerts";
+import VerificacionIngreso from "./VerificacionIngreso";
+import { useLocalStorage } from "../services/useLocalStorage";
 
 const EnvioProyectoScreen = () => {
+  //para saber si la sesion se encuentra iniciada
+  const [loggedIn] = useLocalStorage("loggedIn", false);
+  //para recolectar los datos facilmente de nuestro formulario para su posterior uso
   const [carrera, setCarrera] = useState("");
   const [tituloProyecto, setTituloProyecto] = useState("");
   const [apellidoAutor, setApellidoAutor] = useState("");
@@ -15,11 +20,11 @@ const EnvioProyectoScreen = () => {
   const [abstract, setAbstract] = useState("");
   const [palabrasClave, setPalabrasClave] = useState("");
   const [keywords, setKeywords] = useState("");
-  const [archivo, setArchivo] = useState(null);
+  const [archivo, setArchivo] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     // Aqui ponemos el dialogo de confirmacion debido a que se cargo correctamente el formulario
-    dialogoSuperior("success","Proyecto cargado con exito");
+    dialogoSuperior("success", "Proyecto cargado con exito");
     // Limpiar los campos después de enviar el formulario
     setCarrera("");
     setTituloProyecto("");
@@ -32,7 +37,7 @@ const EnvioProyectoScreen = () => {
     setAbstract("");
     setPalabrasClave("");
     setKeywords("");
-    setArchivo(null);
+    setArchivo("");
   };
 
   return (
@@ -65,7 +70,7 @@ const EnvioProyectoScreen = () => {
           <div className="autores">
             <CustomInput
               title={"Apellido Completos:"}
-              placeholder={"ej: Huanca Luya"}
+              placeholder={"ej: Veliz Mendoza"}
               value={apellidoAutor}
               onChange={(e) => setApellidoAutor(e.target.value)}
             />
@@ -81,7 +86,7 @@ const EnvioProyectoScreen = () => {
           <div className="tutores">
             <CustomInput
               title={"Apellido Completos:"}
-              placeholder={"ej: Huanca Luya"}
+              placeholder={"ej: Veliz Mendoza"}
               value={apellidoTutor}
               onChange={(e) => setApellidoTutor(e.target.value)}
             />
