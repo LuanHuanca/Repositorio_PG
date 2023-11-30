@@ -34,6 +34,7 @@ const EnvioProyectoScreen = () => {
     setKeywords("");
     setArchivo(null);
   };
+
   return (
     <div className="ScreenEnvio">
       <div className="EnvioProyectoScreen">
@@ -64,7 +65,7 @@ const EnvioProyectoScreen = () => {
           <div className="autores">
             <CustomInput
               title={"Apellido Completos:"}
-              placeholder={"ej: Veliz Mendoza"}
+              placeholder={"ej: Huanca Luya"}
               value={apellidoAutor}
               onChange={(e) => setApellidoAutor(e.target.value)}
             />
@@ -80,7 +81,7 @@ const EnvioProyectoScreen = () => {
           <div className="tutores">
             <CustomInput
               title={"Apellido Completos:"}
-              placeholder={"ej: Veliz Mendoza"}
+              placeholder={"ej: Huanca Luya"}
               value={apellidoTutor}
               onChange={(e) => setApellidoTutor(e.target.value)}
             />

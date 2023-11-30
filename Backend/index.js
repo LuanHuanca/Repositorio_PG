@@ -1,10 +1,10 @@
 import express from "express";
 import mysql from "mysql";
 import cors from "cors";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
+// import jwt from "jsonwebtoken";
+// import bcrypt from "bcrypt";
 import cookieParser from "cookie-parser";
-const salt = 10;
+// const salt = 10;
 
 const app = express();
 
@@ -23,6 +23,77 @@ app.use(
         credentials: true,
     })
 );
+
+// AGREGAR
+app.post('/agregarDatosProyecto', async (req, res) => {
+    try {
+    // Paso 1: Insertar Persona
+    const personaResult = await db.query(
+        'INSERT INTO persona (nombre, edad, profesion, correo) VALUES (?, ?, ?, ?)',
+        [req.body.nombrePersona, req.body.edadPersona, req.body.profesionPersona, req.body.correoPersona]
+    );
+
+    const idPersonaInsertada = personaResult.insertId;
+
+    // Paso 2: Insertar Estudiante
+    await db.query(
+        'INSERT INTO estudiante (id_persona) VALUES (?)',
+        [idPersonaInsertada]
+    );
+
+    // Paso 3: Insertar Tutor
+    // (Asume que el tutor ya existe)
+    const tutorResult = await db.query(
+        'INSERT INTO tutor (persona_id_persona) VALUES ((SELECT id_persona FROM persona WHERE nombre = ?))',
+        [req.body.nombreTutor]
+    );
+
+    const idTutorInsertado = tutorResult.insertId;
+
+    // Paso 4: Insertar Relator
+    // (Asume que el relator ya existe)
+    const relatorResult = await db.query(
+        'INSERT INTO relator (persona_id_persona) VALUES ((SELECT id_persona FROM persona WHERE nombre = ?))',
+        [req.body.nombreRelator]
+    );
+
+    const idRelatorInsertado = relatorResult.insertId;
+
+    // Paso 5: Verificar la Carrera
+    // (Asume que la carrera ya existe)
+    await db.query(
+        'INSERT INTO carrera (nombre_carrera) VALUES (?)',
+        [req.body.nombreCarrera]
+    );
+
+    // Paso 6: Verificar la Gestión
+    // (Asume que la gestión ya existe)
+    await db.query(
+        'INSERT INTO gestion (anio) VALUES (?)',
+        [req.body.anioGestion]
+    );
+
+    // Paso 7: Crear la Asignación
+    const asignacionResult = await db.query(
+        'INSERT INTO asignacion (id_estudiante, id_tutor, id_relador, id_gestion, gestion_id_gestion) VALUES (?, ?, ?, (SELECT id_gestion FROM gestion WHERE anio = ?), (SELECT id_gestion FROM gestion WHERE anio = ?))',
+        [idPersonaInsertada, idTutorInsertado, idRelatorInsertado, req.body.anioGestion, req.body.anioGestion]
+    );
+
+    const idAsignacionInsertada = asignacionResult.insertId;
+
+    // Paso 8: Insertar el Proyecto
+    await db.query(
+        'INSERT INTO proyecto (titulo, resumen, objetivo, id_asignacion, carrera_id, drive_link, keywords) VALUES (?, ?, ?, ?, (SELECT id FROM carrera WHERE nombre_carrera = ?), ?, ?)',
+        [req.body.tituloProyecto, req.body.resumenProyecto, req.body.objetivoProyecto, idAsignacionInsertada, req.body.nombreCarrera, req.body.driveLink, req.body.keywords]
+    );
+
+    // Si llegamos aquí sin errores, respondemos con éxito
+    res.json({ Status: 'Success' });
+    } catch (error) {
+    console.error(error);
+    res.status(500).json({ Error: 'Error al procesar la solicitud' });
+    }
+});
 
 // Screen Busqueda
 // Busqueda por titulo
@@ -293,6 +364,8 @@ app.get('/general',(req,res)=>{
         return res.json({general:result});
     });
 });
+
+
 
 
 
