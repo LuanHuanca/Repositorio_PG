@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
     cors({
-        origin: ["http://localhost:5173"],
+        origin: ["http://localhost:5173", "http://172.18.0.125:3000"],
         methods: ["POST", "GET"],
         credentials: true,
     })
@@ -369,6 +369,6 @@ app.get('/general',(req,res)=>{
 
 
 
-app.listen(3000, () => {
+app.listen(3000, '172.18.0.125', () => {
     console.log("conectado con el backend");
 });

@@ -9,7 +9,7 @@ const BusquedaProyectos = () => {
   const searchParams = new URLSearchParams(location.search);
   const nombre = searchParams.get("nombreProyecto");
 
-  const baseURL = `http://localhost:3000/busquedaPorTitulo?titulo=${nombre}`;
+  const baseURL = `http://172.18.0.125:3000/busquedaPorTitulo?titulo=${nombre}`;
   const { data, loading, error } = useFetch(baseURL, "busquedaPorTitulo");
 
   if (loading) {

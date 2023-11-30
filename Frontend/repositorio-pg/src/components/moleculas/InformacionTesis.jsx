@@ -10,7 +10,7 @@ const InformacionTesis = () => {
   const searchParams = new URLSearchParams(location.search);
   const proyecto = searchParams.get("proyecto");
 
-  const baseURL = `http://localhost:3000/general?general=${proyecto}`;
+  const baseURL = `http://172.18.0.125:3000/general?general=${proyecto}`;
   const { data, loading, error } = useFetch(baseURL, "general");
 
   if (loading) {
@@ -26,7 +26,7 @@ const InformacionTesis = () => {
         <div className='Information-container'>
             <img src='src/assets/imagen de tesis.png' alt="Portada Tesis" />
             <div className='informacion'>
-              <p>Resumen: {data[0].Resumen}</p>
+              <p>Resumen: {data[0].Resumen}</p> 
               <p>Gestion: {data[0].Gestión}</p>
               <p>Palabras Clave: {data[0].PalabrasClave}</p>
               {/* <p>Abstract: {tarjeta.Abstract}</p> */}

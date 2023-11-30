@@ -15,47 +15,17 @@ const EnvioProyectoScreen = () => {
   const [nombreAutor, setNombreAutor] = useState("");
   const [apellidoTutor, setApellidoTutor] = useState("");
   const [nombreTutor, setNombreTutor] = useState("");
+  const [apellidoRelator, setApellidoRelator] = useState("");
+  const [nombreRelator, setNombreRelator] = useState("");
   const [gestion, setGestion] = useState("");
   const [resumen, setResumen] = useState("");
   const [abstract, setAbstract] = useState("");
   const [palabrasClave, setPalabrasClave] = useState("");
   const [keywords, setKeywords] = useState("");
   const [archivo, setArchivo] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Los datos son: ");
-    console.log(carrera);
-    console.log(tituloProyecto);
-    console.log(apellidoAutor);
-    console.log(nombreAutor);
-    console.log(apellidoTutor);
-    console.log(nombreTutor);
-    console.log(gestion);
-    console.log(resumen);
-    console.log(abstract);
-    console.log(palabrasClave);
-    console.log(keywords);
-    console.log(archivo);
 
 
-    // Aqui ponemos el dialogo de confirmacion debido a que se cargo correctamente el formulario
-    dialogoSuperior("success", "Proyecto cargado con exito");
-    // Limpiar los campos después de enviar el formulario
-    setCarrera("");
-    setTituloProyecto("");
-    setApellidoAutor("");
-    setNombreAutor("");
-    setApellidoTutor("");
-    setNombreTutor("");
-    setGestion("");
-    setResumen("");
-    setAbstract("");
-    setPalabrasClave("");
-    setKeywords("");
-    setArchivo("");
-  };
-
-  const handleSubmit2 = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Construir el objeto con los datos del formulario
@@ -66,15 +36,18 @@ const EnvioProyectoScreen = () => {
       nombreAutor,
       apellidoTutor,
       nombreTutor,
+      apellidoRelator,
+      nombreRelator,
       gestion,
       resumen,
       abstract,
       palabrasClave,
       archivo
     };
+    //phelmme
 
     try {
-      const response = await fetch("http://localhost:3000/agregarDatosProyecto", {
+      const response = await fetch("http://172.18.0.125:3000/agregarDatosProyecto", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -162,6 +135,22 @@ const EnvioProyectoScreen = () => {
                   onChange={(e) => setNombreTutor(e.target.value)}
                 />
               </div>
+              <h3>Relator/es :</h3>
+              <p>Ingrese los apellidos y nombres del relator/es del trabajo</p>
+              <div className="tutores">
+                <CustomInput
+                  title={"Apellido Completos:"}
+                  placeholder={"ej: Veliz Mendoza"}
+                  value={apellidoRelator}
+                  onChange={(e) => setApellidoRelator(e.target.value)}
+                />
+                <CustomInput
+                  title={"Nombre Completo: "}
+                  placeholder={"ej: Jose Antonio"}
+                  value={nombreRelator}
+                  onChange={(e) => setNombreRelator(e.target.value)}
+                />
+              </div>
               <CustomInput
                 title={"Gestion :"}
                 placeholder={"Ej: II-2023"}
@@ -227,3 +216,38 @@ const EnvioProyectoScreen = () => {
 };
 
 export default EnvioProyectoScreen;
+
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("Los datos son: ");
+  //   console.log(carrera);
+  //   console.log(tituloProyecto);
+  //   console.log(apellidoAutor);
+  //   console.log(nombreAutor);
+  //   console.log(apellidoTutor);
+  //   console.log(nombreTutor);
+  //   console.log(gestion);
+  //   console.log(resumen);
+  //   console.log(abstract);
+  //   console.log(palabrasClave);
+  //   console.log(keywords);
+  //   console.log(archivo);
+
+
+  //   // Aqui ponemos el dialogo de confirmacion debido a que se cargo correctamente el formulario
+  //   dialogoSuperior("success", "Proyecto cargado con exito");
+  //   // Limpiar los campos después de enviar el formulario
+  //   setCarrera("");
+  //   setTituloProyecto("");
+  //   setApellidoAutor("");
+  //   setNombreAutor("");
+  //   setApellidoTutor("");
+  //   setNombreTutor("");
+  //   setGestion("");
+  //   setResumen("");
+  //   setAbstract("");
+  //   setPalabrasClave("");
+  //   setKeywords("");
+  //   setArchivo("");
+  // };
