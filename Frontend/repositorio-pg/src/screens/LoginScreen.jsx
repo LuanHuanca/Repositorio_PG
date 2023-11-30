@@ -6,6 +6,7 @@ import CustomInput from "../components/moleculas/CustomInput";
 import "./LoginScreen.css";
 import { useLocalStorage } from "../services/useLocalStorage";
 import HomeScreen from "./HomeScreen";
+import { alertaError, dialogoSuperior } from "../services/sweetalerts";
 
 const LoginScreen = () => {
   const clientID =
@@ -38,10 +39,11 @@ const LoginScreen = () => {
     setLoggedIn(true);
     //navega la pantalla home con exito y logeo ya definido
     navigate("/");
+    dialogoSuperior("success","Sesion Iniciada con exito");
   };
 
   const onFailure = (response) => {
-    console.log("Algo salió mal al iniciar sesión con Google");
+    alertaError("Algo salió mal al iniciar sesión");
   };
 
   useEffect(() => {

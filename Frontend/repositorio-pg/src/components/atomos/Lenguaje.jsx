@@ -3,12 +3,13 @@ import { NavLink } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import "./Lenguaje.css";
 import { GoogleLogout } from "react-google-login";
+import { dialogoSuperior } from "../../services/sweetalerts";
 
 const Lenguaje = ({ loggedIn, userName }) => {
   const clientID =
   "211803212290-uqelcl3mjmgdogkuvh22nusbfgalibst.apps.googleusercontent.com";
   const handleLogout = () => {
-    console.log("se cerro la sesion correctamente");
+    dialogoSuperior("success","se cerro la sesion correctamente");
     localStorage.clear();
     window.location.href = "/";
   };
@@ -21,7 +22,7 @@ const Lenguaje = ({ loggedIn, userName }) => {
         </NavLink>
       ) : (
         <>
-          <NavLink className="btn" to="/agregar-proyecto">
+          <NavLink className="btn" to="/envioProyecto">
             Subir Proyecto
           </NavLink>
           

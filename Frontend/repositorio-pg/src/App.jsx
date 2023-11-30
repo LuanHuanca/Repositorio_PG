@@ -7,6 +7,7 @@ import Appbar from "./components/organismos/Appbar";
 import LoginScreen from "./screens/LoginScreen";
 import PerfilScreen from "./screens/PerfilScreen";
 import Footer from "./components/organismos/Footer";
+import EnvioProyectoScreen from "./screens/EnvioProyectoScreen";
 
 function App() {
   const location = useLocation();
@@ -23,6 +24,7 @@ function App() {
         <Route path="/tarjetaTesis" element={<TarjetaTesisScreen />}/>
         <Route path="/login" element={<LoginScreen />}/>
         <Route path="/perfil" element={<PerfilScreen/>} />
+        <Route path="/envioProyecto" element={<EnvioProyectoScreen/>} />
       </Routes>
       {!hideRoutes.includes(location.pathname) && <Footer/>}
     </div>
