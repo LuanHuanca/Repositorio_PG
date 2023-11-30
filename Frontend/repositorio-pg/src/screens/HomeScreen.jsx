@@ -7,7 +7,7 @@ import CarouselTarjetas from '../components/moleculas/CarouselTarjetas'
 import Footer from '../components/organismos/Footer'
 import Anuncios from '../components/moleculas/Anuncios'
 
-const HomeScreen = () => {
+const  HomeScreen = () => {
   return (
     <div>
       <TituloImagen/>
