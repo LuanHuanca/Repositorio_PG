@@ -39,6 +39,53 @@ const EnvioProyectoScreen = () => {
     setKeywords("");
     setArchivo("");
   };
+
+  const handleSubmit2 = async (e) => {
+    e.preventDefault();
+
+    // Construir el objeto con los datos del formulario
+    const proyectoData = {
+      carrera,
+      tituloProyecto,
+      apellidoAutor,
+      nombreAutor,
+      apellidoTutor,
+      nombreTutor,
+      gestion,
+      resumen,
+      abstract,
+      palabrasClave,
+      archivo
+    };
+
+    try {
+      const response = await fetch("http://localhost:3000/agregarDatosProyecto", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          // Puedes incluir otros encabezados según tus necesidades
+        },
+        body: JSON.stringify(proyectoData),
+      });
+
+      if (response.ok) {
+        // Aquí puedes manejar la respuesta exitosa
+        dialogoSuperior("success", "Proyecto cargado con éxito");
+        // Limpiar los campos después de enviar el formulario
+        setCarrera("");
+        setTituloProyecto("");
+        // Limpiar otros campos...
+      } else {
+        // Aquí puedes manejar la respuesta de error
+        dialogoSuperior("error", "Hubo un error al cargar el proyecto");
+      }
+    } catch (error) {
+      console.error("Error al enviar el proyecto:", error);
+    }
+  };
+
+
+
   return (
     <div className="ScreenEnvio">
       {!loggedIn ? (
