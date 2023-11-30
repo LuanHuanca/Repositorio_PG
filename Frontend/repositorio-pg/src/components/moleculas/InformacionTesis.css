@@ -32,3 +32,15 @@
     font-size: 20px;
     text-align: justify;
 }
+.Information-container button{
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    width: fit-content;
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: #FCD900;
+    border: 1px solid black;
+    margin: 40px 10px;
+}

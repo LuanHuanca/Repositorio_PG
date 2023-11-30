@@ -15,6 +15,7 @@
     align-items: center;
     color: #fff;
     font-weight: bold;
+    cursor: pointer;
 }
 .tarjetaHome img{
     width: 130px;

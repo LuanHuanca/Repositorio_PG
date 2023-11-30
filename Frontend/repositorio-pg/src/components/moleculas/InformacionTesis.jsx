@@ -34,7 +34,7 @@ const InformacionTesis = () => {
               <p>Autores: {data[0].Autor}</p>
               <p>Carrera: {data[0].Carrera}</p>
               <p>Tutor: {data[0].Tutor}</p>
-              <OurButton ruta={`/tarjetaTesis?proyecto=${proyecto}`} Texto={"Descargar"}/>
+              <button><a href={data[0].url} target='_blank'>Ingresar</a></button>
             </div>
         </div>
     </div>

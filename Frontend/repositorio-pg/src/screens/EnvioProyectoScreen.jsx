@@ -23,6 +23,21 @@ const EnvioProyectoScreen = () => {
   const [archivo, setArchivo] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Los datos son: ");
+    console.log(carrera);
+    console.log(tituloProyecto);
+    console.log(apellidoAutor);
+    console.log(nombreAutor);
+    console.log(apellidoTutor);
+    console.log(nombreTutor);
+    console.log(gestion);
+    console.log(resumen);
+    console.log(abstract);
+    console.log(palabrasClave);
+    console.log(keywords);
+    console.log(archivo);
+
+
     // Aqui ponemos el dialogo de confirmacion debido a que se cargo correctamente el formulario
     dialogoSuperior("success", "Proyecto cargado con exito");
     // Limpiar los campos después de enviar el formulario
