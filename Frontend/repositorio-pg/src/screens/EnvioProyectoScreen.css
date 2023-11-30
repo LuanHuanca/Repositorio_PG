@@ -1,0 +1,89 @@
+.ScreenEnvio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.EnvioProyectoScreen {
+    
+    margin: 20px;
+    padding: 20px;
+    width: 70%;
+    background-color: #e9e9e9;
+    box-shadow: 10px 10px 10px rgba(19, 177, 177, 0.697);
+    border-radius: 10px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  h2 {
+    color: #666;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .autores,
+  .tutores,
+  .keywords {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+  
+  .resumenAbstract {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .resumen,
+  .abstract {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .resumenAbstract textarea {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+    height: 150px;
+  }
+  
+  .button-container {
+    text-align: center;
+  }
+  
+  .button-envio {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .button-envio button:hover {
+    background-color: #45a049;
+  }
+  

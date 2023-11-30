@@ -1,5 +1,7 @@
 .navlink{
     text-decoration: none;
+    padding: 0;
+    margin: 0;
 }
 .tarjetaHome{
     width: 450px;

@@ -6,6 +6,7 @@ import CustomInput from "../components/moleculas/CustomInput";
 import "./LoginScreen.css";
 import { useLocalStorage } from "../services/useLocalStorage";
 import HomeScreen from "./HomeScreen";
+import { alertaError, dialogoSuperior } from "../services/sweetalerts";
 
 const LoginScreen = () => {
   const clientID =
@@ -38,10 +39,11 @@ const LoginScreen = () => {
     setLoggedIn(true);
     //navega la pantalla home con exito y logeo ya definido
     navigate("/");
+    dialogoSuperior("success","Sesion Iniciada con exito");
   };
 
   const onFailure = (response) => {
-    console.log("Algo salió mal al iniciar sesión con Google");
+    alertaError("Algo salió mal al iniciar sesión");
   };
 
   useEffect(() => {
@@ -68,10 +70,10 @@ const LoginScreen = () => {
           <img src="src/assets/logo ranking universidades.png" alt="" />
         </div>
         <h4 id="titulo">
-          Para iniciar la sesión, ingresa tu usuario y contraseña
+          Inicia Sesion con tu cuenta de google
         </h4>
         <div className="formulario-inputs">
-          <form onSubmit={onSuccess}>
+          {/* <form onSubmit={onSuccess}>
             <CustomInput
               title={"Usuario :"}
               placeholder={"Ingrese su nombre de usuario"}
@@ -82,7 +84,7 @@ const LoginScreen = () => {
             />
             <button type="submit">Iniciar Sesión</button>
           </form>
-          <h4>O también puedes iniciar sesión con:</h4>
+          <h4>O también puedes iniciar sesión con:</h4> */}
           <GoogleLogin
             clientId={clientID}
             onSuccess={onSuccess}

@@ -1,0 +1,44 @@
+.verificacion-ingreso-container {
+    margin: 20px;
+    padding: 20px;
+    width: 80%;
+    height: 300px;
+    background-color: #d0cece;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.534);
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+  }
+  
+  .verificacion-ingreso-container h1 {
+    color: #333;
+  }
+  
+  .verificacion-ingreso-container p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .botones-ingreso {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .btn-ingreso {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .btn-ingreso:hover {
+    background-color: #45a049;
+  }
+  
