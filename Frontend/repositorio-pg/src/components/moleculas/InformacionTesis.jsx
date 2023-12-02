@@ -22,18 +22,18 @@ const InformacionTesis = () => {
   }
   return (
     <div className='InformacionTesis-container'>
-        <h1>{data && data.TítuloDelProyecto}</h1>
+        <h1 id='tituloProyecto'>{data[0].TítulodelProyecto}</h1>
         <div className='Information-container'>
             <img src='src/assets/imagen de tesis.png' alt="Portada Tesis" />
             <div className='informacion'>
               <p>Resumen: {data[0].Resumen}</p> 
               <p>Gestion: {data[0].Gestión}</p>
               <p>Palabras Clave: {data[0].PalabrasClave}</p>
-              {/* <p>Abstract: {tarjeta.Abstract}</p> */}
+              <p>Objetivo: Eximinos Inge, nos falta unos puntitos</p>
               <p>Autores: {data[0].Autor}</p>
               <p>Carrera: {data[0].Carrera}</p>
               <p>Tutor: {data[0].Tutor}</p>
-              <button><a href={data[0].url} target='_blank'>Ingresar</a></button>
+              <button><a href={data[0].EnlaceDeDrive} target='_blank'>Ingresar</a></button>
             </div>
         </div>
     </div>
