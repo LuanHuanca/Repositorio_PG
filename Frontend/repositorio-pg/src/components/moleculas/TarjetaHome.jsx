@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link,NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './TarjetaHome.css';
 
 const TarjetaHome = ({ imagen, imagenDescrip, titulo, Descripcion, fecha }) => {
