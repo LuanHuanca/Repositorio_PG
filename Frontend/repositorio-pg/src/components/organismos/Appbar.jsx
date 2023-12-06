@@ -14,7 +14,7 @@ const Appbar = () => {
     <div className="appbar">
       <div className="appbar-container">
         <NavLink to="/">
-          <img src="src\assets\logo_ucb.png" alt="Logo UCB" />
+          <img src="images/logo_ucb.png" alt="Logo UCB" />
         </NavLink>
         <Lenguaje loggedIn={loggedIn} userName={userName} />
       </div>

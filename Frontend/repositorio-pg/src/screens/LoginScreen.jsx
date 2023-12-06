@@ -63,11 +63,11 @@ const LoginScreen = () => {
 
   return (
     <div className="loginscreen">
-      <img src="src/assets/login.jpg" alt="Acceso al login" />
+      <img src="images/login.jpg" alt="Acceso al login" />
       <div className="formulario">
         <div className="formulario-imagenes">
-          <img src="src/assets/logo_ucb.png" alt="logo UCB" />
-          <img src="src/assets/logo ranking universidades.png" alt="" />
+          <img src="images/logo_ucb.png" alt="logo UCB" />
+          <img src="images/logo ranking universidades.png" alt="" />
         </div>
         <h4 id="titulo">
           Inicia Sesion con tu cuenta de google
