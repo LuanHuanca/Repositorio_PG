@@ -1,10 +1,13 @@
 import express from "express";
+import https from "https";
+import http from "http";
+import fs from "fs";
 import mysql from "mysql";
 import cors from "cors";
-// import jwt from "jsonwebtoken";
-// import bcrypt from "bcrypt";
 import cookieParser from "cookie-parser";
 // const salt = 10;
+
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
 const app = express();
 
@@ -14,6 +17,14 @@ const db = mysql.createConnection({
     password: "",
     database: "proyectos_de_grado",
 });
+
+// Configuración de HTTPS con certificado autofirmado
+const privateKey = fs.readFileSync('C:/Users/ASUS RYZEN 7/server-key.pem', 'utf8');
+const certificate = fs.readFileSync('C:/Users/ASUS RYZEN 7/server-cert.pem', 'utf8');
+
+const credentials = { key: privateKey, cert: certificate };
+
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(
@@ -367,8 +378,18 @@ app.get('/general',(req,res)=>{
 
 
 
+// Crear servidores HTTP y HTTPS
+const httpServer = http.createServer(app);
 
-
-app.listen(3000, '192.168.0.12', () => {
-    console.log("conectado con el backend");
+// Nota: En el entorno de desarrollo local, puedes seguir utilizando HTTP
+httpServer.listen(3000, '192.168.0.12', () => {
+    console.log("Servidor HTTP conectado");
 });
+
+// Crear servidor HTTPS
+const httpsServer = https.createServer(credentials, app);
+
+httpsServer.listen(443, '192.168.0.12', () => {
+    console.log("Servidor HTTPS conectado");
+});
+
