@@ -367,7 +367,7 @@ app.get('/general',(req,res)=>{
     JOIN 
         carrera c ON p.carrera_id = c.id
     WHERE 
-        p.titulo LIKE (?);`;
+        p.titulo LIKE (?); `;
     db.query(q, [`%${general}%`], (err,result)=>{
         if(err){
             return res.json({Error: "Error al obtener general"})

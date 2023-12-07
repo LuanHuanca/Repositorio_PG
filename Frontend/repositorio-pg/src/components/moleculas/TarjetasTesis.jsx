@@ -11,7 +11,7 @@ const TarjetasTesis = ({titulo, autor, fecha, carrera}) => {
   };
   return (
     <div className="tarjetas-de-tesis">
-      <img src="/src/assets/imagen de tesis.png" alt="Portada Tesis" />
+      <img src="images/imagen de tesis.png" alt="Portada Tesis" />
       <div className="tarjeta-informacion">
         <h3>{titulo}</h3>
         <h3>por {autor}</h3>
