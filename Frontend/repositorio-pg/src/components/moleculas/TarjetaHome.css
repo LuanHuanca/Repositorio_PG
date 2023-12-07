@@ -30,9 +30,13 @@
     font-size: 15px;
     margin: 5px 10px;
 }
-.tarjetaHome-container h3{
-    margin: 2px 20px;
+.tarjetaHome-container h4{
+    font-size: 13px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+#descripcion{
+    font-size: 10px;
 }

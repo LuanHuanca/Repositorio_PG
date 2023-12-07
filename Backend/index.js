@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
     cors({
-        origin: ["http://localhost:5173", "http://172.18.0.125:3000"],
+        origin: ["https://repositorio-de-tesis-ucb.web.app", "http://192.168.0.12:3000"],
         methods: ["POST", "GET"],
         credentials: true,
     })
@@ -369,6 +369,6 @@ app.get('/general',(req,res)=>{
 
 
 
-app.listen(3000, '172.18.0.125', () => {
+app.listen(3000, '192.168.0.12', () => {
     console.log("conectado con el backend");
 });

@@ -5,7 +5,7 @@ import './Footer.css'
 const Footer = () => {
   return (
     <div className='footer'>
-        <img src="src/assets/logo.png" alt="Logo UCB" />
+        <img src="images/logo.png" alt="Logo UCB" />
         <div className='footertexto'>
             <p>© 2023 www.ucb.edu.bo</p>
             <p>Todos los derechos reservados</p>
