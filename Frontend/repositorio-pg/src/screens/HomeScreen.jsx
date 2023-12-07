@@ -12,11 +12,11 @@ const  HomeScreen = () => {
     <div>
       <TituloImagen/>
       <TituloContenido valor={"RECIENTE"}/>
-      <CarouselTarjetas baseurl={"http://192.168.0.12:3000/anioDes"} point={"anioDes"} />
+      <CarouselTarjetas baseurl={"https://192.168.0.12:443/anioDes"} point={"anioDes"} />
       <Anuncios/>
       <TituloContenido valor={"DESTACADO"}/>
       <div className='destacado-container'>
-        <CarouselTarjetas baseurl={"http://192.168.0.12:3000/destacados"} point={"destacados"} />
+        <CarouselTarjetas baseurl={"https://192.168.0.12:443/destacados"} point={"destacados"} />
       </div>
     </div>
   )
