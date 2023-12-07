@@ -11,7 +11,7 @@ const TarjetaHome = ({ imagen, imagenDescrip, titulo, Descripcion, fecha }) => {
   return (
     <div onClick={()=>{enviarKey(titulo)}}  className="navlink">
       <div className='tarjetaHome'>
-      <img src="/src/assets/imagen de tesis.png" alt={imagenDescrip} />
+      <img src="images/imagen de tesis.png" alt={imagenDescrip} />
         <div className='tarjetaHome-container'>
           <h4>{titulo}</h4>
           <h4>Descripción</h4>

@@ -10,7 +10,7 @@ const InformacionTesis = () => {
   const searchParams = new URLSearchParams(location.search);
   const proyecto = searchParams.get("proyecto");
 
-  const baseURL = `http://192.168.0.12:3000/general?general=${proyecto}`;
+  const baseURL = `http://192.168.0.12:443/general?general=${proyecto}`;
   const { data, loading, error } = useFetch(baseURL, "general");
 
   if (loading) {
